@@ -1,0 +1,18 @@
+<button routerLink="[/home]">Back</button>
+
+<h3>{{likes.length}}</h3>
+
+
+<div class="cc">
+    <form>
+        <input type="text" [(ngModel)]="searchName" name="searchName">
+    </form>
+    <div class="c" *ngFor="let albumImage of albums; let i = index">
+        <img [src]="albumImage" alt="" (click)="like()" class="image">
+    </div> 
+
+    <div class="container" *ngFor="let name of albumsName | search : searchName; let i = index">
+        <h4>{{name}}</h4>
+    </div>
+
+</div>
